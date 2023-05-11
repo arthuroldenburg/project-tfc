@@ -22,6 +22,7 @@ class App {
 
     this.app.use(express.json());
     this.app.use(accessControl);
+    // rota
   }
 
   public start(PORT: string | number):void {
