@@ -10,6 +10,11 @@ export default class TeamService {
     return teams;
   }
 
+  public static async getOne(id: number): Promise<any> {
+    const team = await TeamModel.findOne({ where: { id } });
+    return team;
+  }
+
   // public static async create(team: CreateTeamAtt): Promise<TeamsAtt> {
   //   const teamCreated = await TeamModel.create(team);
   //   return teamCreated.toJSON();
