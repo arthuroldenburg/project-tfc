@@ -1,4 +1,4 @@
-import { Model, BOOLEAN, INTEGER } from 'sequelize';
+import { Model, DataTypes } from 'sequelize';
 import db from '.';
 
 class matches extends Model {
@@ -12,16 +12,16 @@ class matches extends Model {
 
 matches.init({
   id: {
-    type: INTEGER,
+    type: DataTypes.INTEGER,
     allowNull: false,
     primaryKey: true,
     autoIncrement: true,
   },
-  homeTeamId: { type: INTEGER, allowNull: false },
-  homeTeamGoals: { type: INTEGER, allowNull: false },
-  awayTeamId: { type: INTEGER, allowNull: false },
-  awayTeamGoals: { type: INTEGER, allowNull: false },
-  inProgress: { type: BOOLEAN, allowNull: false },
+  homeTeamId: { type: DataTypes.INTEGER, allowNull: false },
+  homeTeamGoals: { type: DataTypes.INTEGER, allowNull: false },
+  awayTeamId: { type: DataTypes.INTEGER, allowNull: false },
+  awayTeamGoals: { type: DataTypes.INTEGER, allowNull: false },
+  inProgress: { type: DataTypes.BOOLEAN, allowNull: false },
 }, {
   sequelize: db,
   modelName: 'matches',
