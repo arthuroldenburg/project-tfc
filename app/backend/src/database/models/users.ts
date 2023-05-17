@@ -1,6 +1,15 @@
 import { Model, DataTypes } from 'sequelize';
 import db from '.';
 
+export interface UsersAtt {
+  id: number,
+  username: string,
+  role: string,
+  email: string,
+  password: string
+}
+
+export type CreateTeamAtt = Omit<UsersAtt, 'id'>;
 class users extends Model {
   declare id: number;
   declare username: string;

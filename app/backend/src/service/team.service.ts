@@ -1,7 +1,3 @@
-// import fs from 'fs/promises';
-// import path from 'path';
-// import Team, {CreateTeamAtt} from '../database/models/teams';
-
 import TeamModel, { TeamsAtt } from '../database/models/teams';
 
 export default class TeamService {
@@ -10,7 +6,7 @@ export default class TeamService {
     return teams;
   }
 
-  public static async getOne(id: number): Promise<any> {
+  public static async getOne(id: number): Promise<TeamModel | null> {
     const team = await TeamModel.findOne({ where: { id } });
     return team;
   }
