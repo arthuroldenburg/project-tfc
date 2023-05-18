@@ -3,10 +3,14 @@ import statusCodes from '../statusCodes';
 import MatchesService from '../service/matches.service';
 
 export default class Matches {
-  static async matches(_req: Request, res: Response) {
+  static async matches(req: Request, res: Response) {
     const matches = await MatchesService.getAll();
-    console.log(matches);
-
+    const { inProgress } = req.query;
+    if (inProgress === 'true' || inProgress === 'false') {
+      const progressStr = inProgress.toString();
+      const filteredMatches = matches.filter((e) => e.inProgress.toString() === progressStr);
+      return res.status(statusCodes.ok).json(filteredMatches);
+    }
     res.status(statusCodes.ok).json(matches);
   }
   // para pegar de query
