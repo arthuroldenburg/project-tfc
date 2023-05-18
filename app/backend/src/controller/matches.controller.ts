@@ -13,10 +13,6 @@ export default class Matches {
     }
     res.status(statusCodes.ok).json(matches);
   }
-  // para pegar de query
-  // const xablau = req.query;
-  // console.log('QUERY: ', xablau);
-  // return res.status(statusCodes.ok).json({ message: xablau });
 
   static matchesUpdate(req: Request, res: Response) {
     const { id } = req.params;
@@ -25,9 +21,9 @@ export default class Matches {
     res.status(statusCodes.ok).json({ id });
   }
 
-  static finishMatches(req: Request, res: Response) {
-    const xablau = req.params.id;
-    console.log('FINISH PARAMS: ', xablau);
-    res.status(statusCodes.ok).json({ message: xablau });
+  static async finishMatches(req: Request, res: Response) {
+    const { id } = req.params;
+    await MatchesService.finishMatch(Number(id));
+    res.status(statusCodes.ok).json({ message: 'Finished' });
   }
 }
