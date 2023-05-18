@@ -13,4 +13,8 @@ export default class MatchesService {
   static async finishMatch(id: number): Promise<void> {
     await MatchesModel.update({ inProgress: false }, { where: { id } });
   }
+
+  static async updateMatch(id: number, home: number, away: number): Promise<void> {
+    await MatchesModel.update({ homeTeamGoals: home, awayTeamGoals: away }, { where: { id } });
+  }
 }

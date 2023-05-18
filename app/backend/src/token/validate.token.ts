@@ -11,9 +11,7 @@ export default (req: Request, res: Response, next: NextFunction) => {
   }
   try {
     const decoded = verify(token, secret);
-    console.log('DECODADO:  ', decoded);
     if (decoded) {
-      req.body = { email: decoded };
       return next();
     }
   } catch (err) {

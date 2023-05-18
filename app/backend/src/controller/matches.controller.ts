@@ -14,11 +14,11 @@ export default class Matches {
     res.status(statusCodes.ok).json(matches);
   }
 
-  static matchesUpdate(req: Request, res: Response) {
+  static async matchesUpdate(req: Request, res: Response) {
     const { id } = req.params;
     const { homeTeamGoals, awayTeamGoals } = req.body;
-    console.log(homeTeamGoals, awayTeamGoals);
-    res.status(statusCodes.ok).json({ id });
+    await MatchesService.updateMatch(Number(id), Number(homeTeamGoals), Number(awayTeamGoals));
+    res.status(statusCodes.ok).json('ok');
   }
 
   static async finishMatches(req: Request, res: Response) {
