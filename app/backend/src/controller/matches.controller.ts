@@ -26,4 +26,15 @@ export default class Matches {
     await MatchesService.finishMatch(Number(id));
     res.status(statusCodes.ok).json({ message: 'Finished' });
   }
+
+  static async createMatches(req: Request, res: Response) {
+    const { homeTeamId, awayTeamId, homeTeamGoals, awayTeamGoals } = req.body;
+    const created = await MatchesService.createMatch(
+      homeTeamId,
+      awayTeamId,
+      homeTeamGoals,
+      awayTeamGoals,
+    );
+    res.status(statusCodes.created).json(created);
+  }
 }

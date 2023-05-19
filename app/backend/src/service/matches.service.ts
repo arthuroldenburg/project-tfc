@@ -17,4 +17,14 @@ export default class MatchesService {
   static async updateMatch(id: number, home: number, away: number): Promise<void> {
     await MatchesModel.update({ homeTeamGoals: home, awayTeamGoals: away }, { where: { id } });
   }
+
+  static async createMatch(
+    homeTeamId: number,
+    awayTeamId: number,
+    homeTeamGoals: number,
+    awayTeamGoals: number,
+  ) {
+    const created = MatchesModel.create({ homeTeamId, awayTeamId, homeTeamGoals, awayTeamGoals });
+    return created;
+  }
 }

@@ -26,7 +26,8 @@ router
 
 router
   .route('/matches')
-  .get(MatchesController.matches);
+  .get(MatchesController.matches)
+  .post(validateToken, MatchesController.createMatches);
 
 router
   .route('/matches/:id/finish')
