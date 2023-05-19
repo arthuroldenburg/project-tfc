@@ -4,6 +4,7 @@ import LoginController from '../controller/login.controller';
 import TeamController from '../controller/team.controller';
 import MatchesController from '../controller/matches.controller';
 import loginMiddleware from '../Middlewares/Login.middleware';
+import TeamsVerify from '../Middlewares/TeamsVerify.middleware';
 
 const router = Router();
 
@@ -27,7 +28,7 @@ router
 router
   .route('/matches')
   .get(MatchesController.matches)
-  .post(validateToken, MatchesController.createMatches);
+  .post(validateToken, TeamsVerify, MatchesController.createMatches);
 
 router
   .route('/matches/:id/finish')
