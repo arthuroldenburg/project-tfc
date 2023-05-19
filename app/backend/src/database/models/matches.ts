@@ -2,6 +2,17 @@ import { Model, DataTypes } from 'sequelize';
 import db from '.';
 import teams from './teams';
 
+export interface IMatches {
+  id: number;
+  homeTeamId: number;
+  homeTeamGoals: number;
+  awayTeamId: number;
+  awayTeamGoals: number;
+  inProgress: boolean;
+  homeTeam: { teamName: string }
+  awayTeam: { teamName: string }
+}
+
 class matches extends Model {
   declare id: number;
   declare homeTeamId: number;
