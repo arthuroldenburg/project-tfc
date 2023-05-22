@@ -1,8 +1,9 @@
 import { Router } from 'express';
-import validateToken from '../token/validate.token';
 import LoginController from '../controller/login.controller';
 import TeamController from '../controller/team.controller';
 import MatchesController from '../controller/matches.controller';
+import LeaderBoardController from '../controller/leaderboard.controller';
+import validateToken from '../token/validate.token';
 import loginMiddleware from '../Middlewares/Login.middleware';
 import TeamsVerify from '../Middlewares/TeamsVerify.middleware';
 
@@ -18,7 +19,6 @@ router
 
 router
   .route('/login')
-  // .post(LoginController.login);
   .post(loginMiddleware, LoginController.login);
 
 router
@@ -37,6 +37,18 @@ router
 router
   .route('/matches/:id')
   .patch(validateToken, MatchesController.matchesUpdate);
+
+router
+  .route('/leaderboard/home')
+  .get(LeaderBoardController.getHomeLeaderBoard);
+
+router
+  .route('/leaderboard/away')
+  .get(LeaderBoardController.getAwayLeaderBoard);
+
+router
+  .route('/leaderboard')
+  .get(LeaderBoardController.getLeaderBoard);
 // para uso de middleware é só colocar ele antes do controller
 
 export default router;
