@@ -4,8 +4,7 @@ import * as chai from 'chai';
 import chaiHttp = require('chai-http');
 
 import { app } from '../app';
-import teamModel from '../database/models/teams';
-
+import matchesModel from '../database/models/matches'
 import { Response } from 'superagent';
 import { matchesMock } from './mocks/matches.mock';
 import { IMatches } from '../database/models/matches';
@@ -14,13 +13,13 @@ chai.use(chaiHttp);
 
 const { expect } = chai;
 
-describe('Test teams table', () => {
+describe('Test matches table', () => {
   before(async () => {
     sinon
-      .stub(teamModel, "findAll")
+      .stub(matchesModel, "findOne")
       .resolves({
         ...matchesMock
-      } as any[]);
+      } as any);
   });
   
   after(()=>{

@@ -1,20 +1,20 @@
-import * as sinon from 'sinon';
-import * as chai from 'chai';
+// import * as sinon from 'sinon';
+// import * as chai from 'chai';
 // @ts-ignore
-import chaiHttp = require('chai-http');
+// import chaiHttp = require('chai-http');
 
-import { app } from '../app';
-import userModel from '../database/models/users';
-import teamModel from '../database/models/teams';
-import matchesModel from '../database/models/matches';
+// import { app } from '../app';
+// import userModel from '../database/models/users';
+// import teamModel from '../database/models/teams';
+// import matchesModel from '../database/models/matches';
 
-import { Response } from 'superagent';
+// import { Response } from 'superagent';
 
-chai.use(chaiHttp);
+// chai.use(chaiHttp);
 
-const { expect } = chai;
+// const { expect } = chai;
 
-describe('Seu teste', () => {
+// describe('Seu teste', () => {
   /**
    * Exemplo do uso de stubs com tipos
    */
@@ -41,7 +41,7 @@ describe('Seu teste', () => {
   //   expect(...)
   // });
 
-  it('Seu sub-teste', () => {
-    expect(false).to.be.eq(true);
-  });
-});
+  // it('Seu sub-teste', () => {
+  //   expect(false).to.be.eq(true);
+  // });
+// });

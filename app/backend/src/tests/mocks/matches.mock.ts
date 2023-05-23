@@ -1,6 +1,4 @@
-import { IMatches } from '../../database/models/matches';
-
-export const matchesMock: IMatches[] = [
+export const matchesMock = [
   {
     "id": 1,
     "homeTeamId": 16,
@@ -564,10 +562,10 @@ export const matchesMock: IMatches[] = [
   {
     "id": 41,
     "homeTeamId": 16,
-    "homeTeamGoals": 2,
+    "homeTeamGoals": 6,
     "awayTeamId": 9,
     "awayTeamGoals": 0,
-    "inProgress": true,
+    "inProgress": false,
     "homeTeam": {
       "teamName": "São Paulo"
     },
@@ -581,7 +579,7 @@ export const matchesMock: IMatches[] = [
     "homeTeamGoals": 1,
     "awayTeamId": 1,
     "awayTeamGoals": 0,
-    "inProgress": true,
+    "inProgress": false,
     "homeTeam": {
       "teamName": "Ferroviária"
     },
@@ -637,7 +635,7 @@ export const matchesMock: IMatches[] = [
     "homeTeamGoals": 1,
     "awayTeamId": 12,
     "awayTeamGoals": 1,
-    "inProgress": true,
+    "inProgress": false,
     "homeTeam": {
       "teamName": "Corinthians"
     },
@@ -651,7 +649,7 @@ export const matchesMock: IMatches[] = [
     "homeTeamGoals": 1,
     "awayTeamId": 14,
     "awayTeamGoals": 2,
-    "inProgress": true,
+    "inProgress": false,
     "homeTeam": {
       "teamName": "Grêmio"
     },
@@ -671,6 +669,20 @@ export const matchesMock: IMatches[] = [
     },
     "awayTeam": {
       "teamName": "Bahia"
+    }
+  },
+  {
+    "id": 49,
+    "homeTeamId": 6,
+    "homeTeamGoals": 3,
+    "awayTeamId": 11,
+    "awayTeamGoals": 1,
+    "inProgress": false,
+    "homeTeam": {
+      "teamName": "Ferroviária"
+    },
+    "awayTeam": {
+      "teamName": "Napoli-SC"
     }
   }
 ]

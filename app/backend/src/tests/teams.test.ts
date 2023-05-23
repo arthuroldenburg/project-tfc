@@ -16,10 +16,10 @@ const { expect } = chai;
 describe('Test teams table', () => {
   before(async () => {
     sinon
-      .stub(teamModel, "findAll")
+      .stub(teamModel, "findOne")
       .resolves({
         ...teamsMock
-      } as teamModel[]);
+      } as any);
   });
 
   after(()=>{
